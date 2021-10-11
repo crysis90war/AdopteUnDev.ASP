@@ -16,12 +16,13 @@ namespace AdopteDev.ASP.Controllers
     {
         private readonly IClientBllRepository _ClientBllRepository;
         private readonly ISessionManager _sessionManager;
+        private readonly IUserBllRepository _userBllRepository;
 
-
-        public ClientController(IClientBllRepository ClientBllRepository, ISessionManager sessionManager)
+        public ClientController(IClientBllRepository ClientBllRepository, ISessionManager sessionManager, IUserBllRepository userBllRepository)
         {
             _ClientBllRepository = ClientBllRepository;
             _sessionManager = sessionManager;
+            _userBllRepository = userBllRepository;
         }
 
         public IActionResult Index()
@@ -49,18 +50,11 @@ namespace AdopteDev.ASP.Controllers
             {
                 return View(form);
             }
-            ClientModel client = _ClientBllRepository.LoginClient(form.Email, form.Pswd).BllToAsp();
-            if (client is not null)
+            //ClientModel client = _ClientBllRepository.LoginClient(form.Email, form.Pswd).BllToAsp();
+            UserModel utilisateur = _userBllRepository.ConnectClient(form.Email, form.Pswd).AspToBll();
+            if (utilisateur is not null)
             {
-                UserModel user = new()
-                {
-                    Id = client.Id,
-                    LastName = client.LastName,
-                    FirstName = client.FirstName,
-                    Email = client.Email,
-                    Token = client.Token
-                };
-                _sessionManager.CurrentUser = user;
+                _sessionManager.CurrentUser = utilisateur;
                 return RedirectToAction("ProfilClient", "Client");
             }
             return View(form);

@@ -36,7 +36,7 @@ namespace AdopteDev.ASP.Mapper
             };
         }
 
-        /*---------------------------------------------Client-------------------------------------------------*/
+        /* --------------------------------------------- Client ------------------------------------------------- */
         internal static ClientBllModel AspToBll(this ClientRegisterForm entity)
         {
             return new ClientBllModel()
@@ -59,6 +59,32 @@ namespace AdopteDev.ASP.Mapper
                 FirstName =  model.FirstName,
                 Compagny =  model.Compagny,
                 Email =  model.Email
+            };
+        }
+
+        /* --------------------------------------------- User ------------------------------------------------- */
+
+        public static UserBllModel AspToBll(this UserModel model)
+        {
+            return new UserBllModel()
+            {
+                Id = model.Id,
+                LastName = model.LastName,
+                FirstName = model.FirstName,
+                Email = model.Email,
+                Token = model.Token
+            };
+        }
+
+        public static UserModel AspToBll(this UserBllModel entity)
+        {
+            return new UserModel()
+            {
+                Id = entity.Id,
+                LastName = entity.LastName,
+                FirstName = entity.FirstName,
+                Email = entity.Email,
+                Token = entity.Token
             };
         }
     }

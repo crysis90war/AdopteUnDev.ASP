@@ -5,14 +5,10 @@ using AdopteUnDev.DAL.Interfaces;
 using AdopteUnDev.DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AdopteDev.ASP
 {
@@ -41,6 +37,9 @@ namespace AdopteDev.ASP
             // Dev
             services.AddScoped<IDeveloppeurDalRepository, DeveloppeurDalRepository>();
             services.AddScoped<IDeveloppeurBllRepository, DeveloppeurBllRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserBllRepository, UserBllRepository>();
+
             // CLient
             services.AddScoped<IClientDalRepository, ClientDalRepository>();
             services.AddScoped<IClientBllRepository, ClientBllRepository>();
