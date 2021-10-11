@@ -23,7 +23,6 @@ namespace AdopteUnDev.BLL.Mapper
                 Email = entity.Email,
                 Pswd = entity.Pswd
             };
-
         }
 
         internal static DeveloppeurBllModel DalToBll(this DeveloppeurDalEntity entity)
@@ -63,6 +62,32 @@ namespace AdopteUnDev.BLL.Mapper
                 Compagny = entity.Compagny,
                 Tel = entity.Tel,
                 Email = entity.Email
+            };
+        }
+
+        /* --------------------------------------- User ----------------------------------------------- */
+
+        public static UserEntity BllToDal(this UserBllModel model)
+        {
+            return new UserEntity()
+            {
+                Id = model.Id,
+                LastName = model.LastName,
+                FirstName = model.FirstName,
+                Email = model.Email,
+                Token = model.Token
+            };
+        }
+
+        public static UserBllModel DalToBll(this UserEntity entity)
+        {
+            return new UserBllModel()
+            {
+                Id = entity.Id,
+                LastName = entity.LastName,
+                FirstName = entity.FirstName,
+                Email = entity.Email,
+                Token = entity.Token
             };
         }
     }
