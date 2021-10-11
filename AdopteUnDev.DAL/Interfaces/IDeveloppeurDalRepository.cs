@@ -9,6 +9,9 @@ namespace AdopteUnDev.DAL.Interfaces
 {
     public interface IDeveloppeurDalRepository
     {
+        // Login
+        public DeveloppeurDalEntity LoginDev(string email, string password);
+
         // Register
         void RegisterDev(DeveloppeurDalEntity entity);
     }

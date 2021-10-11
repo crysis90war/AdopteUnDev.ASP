@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AdopteUnDev.BLL.Mapper
 {
-    internal static class MapperBll
+    internal static class Mapper
     {
         /*---------------------------------------Developpeur-----------------------------------------------*/
         internal static DeveloppeurDalEntity BllToDal(this DeveloppeurBllModel entity)

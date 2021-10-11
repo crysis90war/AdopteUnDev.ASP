@@ -1,0 +1,10 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h3>Bonjour !</h3>
+@if (SessionManager.CurrentUser is not null)
+{
+    <span>Connnecté en tant que => @SessionManager.CurrentUser.Email</span>
+}

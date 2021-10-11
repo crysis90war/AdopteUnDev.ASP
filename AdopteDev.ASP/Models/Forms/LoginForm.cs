@@ -7,24 +7,8 @@ using System.Threading.Tasks;
 
 namespace AdopteDev.ASP.Models.Forms
 {
-    public class ClientRegisterForm
+    public class LoginForm
     {
-        [Required]
-        [DisplayName("Nom :")]
-        public string LastName { get; set; }
-
-        [Required]
-        [DisplayName("Prenom :")]
-        public string FirstName { get; set; }
-
-        [Required]
-        [DisplayName("Societer :")]
-        public string Compagny { get; set; }
-
-        [Required]
-        [DisplayName("telephone :")]
-        public string Tel { get; set; }
-
         [Required]
         [DisplayName("E-mail :")]
         public string Email { get; set; }

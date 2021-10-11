@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 
 namespace AdopteDev.ASP.Models
 {
-    public class UserModel : IUserModel
+    public class UserModel 
     {
         public int Id { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string Tel { get; set; }
         public string Email { get; set; }
-        public string Pswd { get; set; }
+        public string Token { get; set; }
     }
 }

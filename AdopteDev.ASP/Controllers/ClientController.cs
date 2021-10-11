@@ -29,6 +29,11 @@ namespace AdopteDev.ASP.Controllers
             return View();
         }
 
+        public IActionResult ProfilDev()
+        {
+            return View();
+        }
+
         public IActionResult LoginClient()
         {
             ViewBag.Title = "Login Page";
@@ -36,7 +41,7 @@ namespace AdopteDev.ASP.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginClient(ClientLoginForm form)
+        public IActionResult LoginClient(LoginForm form)
         {
             ViewBag.Title = "Login Page";
 
@@ -44,11 +49,19 @@ namespace AdopteDev.ASP.Controllers
             {
                 return View(form);
             }
-            ClientModel user = _ClientBllRepository.LoginClient(form.Email, form.Pswd).BllToAsp();
-            if (user is not null)
+            ClientModel client = _ClientBllRepository.LoginClient(form.Email, form.Pswd).BllToAsp();
+            if (client is not null)
             {
+                UserModel user = new()
+                {
+                    Id = client.Id,
+                    LastName = client.LastName,
+                    FirstName = client.FirstName,
+                    Email = client.Email,
+                    Token = client.Token
+                };
                 _sessionManager.CurrentUser = user;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("ProfilClient", "Client");
             }
             return View(form);
         }
@@ -67,8 +80,8 @@ namespace AdopteDev.ASP.Controllers
             }
             else
             {
-                _ClientBllRepository.RegisterClient(form.ASPToBll());
-                return RedirectToAction("Index", "Home");
+                _ClientBllRepository.RegisterClient(form.AspToBll());
+                return RedirectToAction("RegisterClient", "Client");
             }
         }
     }

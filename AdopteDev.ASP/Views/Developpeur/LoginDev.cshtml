@@ -1,0 +1,32 @@
+﻿@model AdopteDev.ASP.Models.Forms.LoginForm
+
+@{
+    ViewData["Title"] = "View";
+}
+<h4 class="d-flex justify-content-center">Connexion</h4>
+<hr />
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <div class="w-50">
+            <form asp-action="ProfilDev">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Pswd" class="control-label"></label>
+                    <input asp-for="Pswd" class="form-control" />
+                    <span asp-validation-for="Pswd" class="text-danger"></span>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <input type="submit" value="Confirmer" class="text-right btn btn-outline-primary mx-1" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

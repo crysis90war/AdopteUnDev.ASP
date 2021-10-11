@@ -9,6 +9,8 @@ namespace AdopteUnDev.BLL.Interfaces
 {
     public interface IDeveloppeurBllRepository
     {
+        public DeveloppeurBllModel LoginDev(string email, string password);
+
         void RegisterDev(DeveloppeurBllModel entity);
     }
 }

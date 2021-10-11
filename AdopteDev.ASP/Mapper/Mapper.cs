@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace AdopteDev.ASP.Mapper
 {
-    internal static class MapperASP
+    internal static class Mapper
     {
         /*---------------------------------------------Developpeur-------------------------------------------------*/
-        internal static DeveloppeurBllModel ASPToBll(this DevRegisterForm entity)
+        internal static DeveloppeurBllModel AspToBll(this DevRegisterForm entity)
         {
             return new DeveloppeurBllModel()
             {
@@ -24,8 +24,20 @@ namespace AdopteDev.ASP.Mapper
             };
         }
 
+        internal static DeveloppeurModel BllToAsp(this DeveloppeurBllModel model)
+        {
+            return new DeveloppeurModel()
+            {
+                Id = model.Id,
+                LastName = model.LastName,
+                FirstName = model.FirstName,
+                BirthDate = model.BirthDate,
+                Email = model.Email,
+            };
+        }
+
         /*---------------------------------------------Client-------------------------------------------------*/
-        internal static ClientBllModel ASPToBll(this ClientRegisterForm entity)
+        internal static ClientBllModel AspToBll(this ClientRegisterForm entity)
         {
             return new ClientBllModel()
             {
@@ -46,9 +58,7 @@ namespace AdopteDev.ASP.Mapper
                 LastName =  model.LastName,
                 FirstName =  model.FirstName,
                 Compagny =  model.Compagny,
-                Tel =  model.Tel,
-                Email =  model.Email,
-                Pswd =  model.Pswd
+                Email =  model.Email
             };
         }
     }

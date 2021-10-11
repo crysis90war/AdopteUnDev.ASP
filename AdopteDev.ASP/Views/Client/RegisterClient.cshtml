@@ -1,56 +1,54 @@
 ﻿@model AdopteDev.ASP.Models.Forms.ClientRegisterForm
 
 @{
-    ViewData["Title"] = "RegisterClient";
+    ViewData["Title"] = "ClientRegister";
 }
-
-<h1>RegisterClient</h1>
-
-<h4>ClientRegisterForm</h4>
+<h4 class="d-flex justify-content-center">Inscription Client</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="RegisterClient">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Compagny" class="control-label"></label>
-                <input asp-for="Compagny" class="form-control" />
-                <span asp-validation-for="Compagny" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Tel" class="control-label"></label>
-                <input asp-for="Tel" class="form-control" />
-                <span asp-validation-for="Tel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Pswd" class="control-label"></label>
-                <input asp-for="Pswd" class="form-control" />
-                <span asp-validation-for="Pswd" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <div class="w-50">
+            <form asp-action="ClientRegister">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Compagny" class="control-label"></label>
+                    <input asp-for="Compagny" class="form-control" />
+                    <span asp-validation-for="Compagny" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tel" class="control-label"></label>
+                    <input asp-for="Tel" class="form-control" />
+                    <span asp-validation-for="Tel" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Pswd" class="control-label"></label>
+                    <input asp-for="Pswd" class="form-control" />
+                    <span asp-validation-for="Pswd" class="text-danger"></span>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                    <div class=" text-left">
+                        <input type="submit" value="Confirmer" class="text-right btn btn-outline-primary mx-1 " />
+                        <a class=" text-right btn btn-outline-danger mx-1" asp-area="" asp-controller="Auth" asp-action="TypeCompte">Retour</a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

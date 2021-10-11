@@ -4,10 +4,23 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">Application : Adopte un Dev/a>.</p>
-    @if (SessionManager.CurrentUser is not null)
+    <h1 class="display-4">Bievenue !</h1>
+
+    <h2 class="align-content-center ">Le but de l'application est de permettre aux utilisateurs d'adopter un Développeur pour une durée limitée afin de réaliser leur projet</h2>
+</div>
+    <h5>On doit pouvoir se connecter soit en tant que développeur et dans ce cas nous pouvons :</h5>
+    <p>* Gérer les compétences</p>
+    <p>* Mettre à jours le profil</p>
+    <p >* Accepter ou refuser les offres</p>
+
+    <h5>Ou bien se connecter en tant que client et dans ce cas nous pouvons :</h5>
+    <p>* Voir la liste des développeurs</p>
+    <p>* Faire une recherche par compétence</p>
+    <p>* Proposer des contrats à durée déterminées 3 - 6 - 9 mois avec une petite note explicative du projet à faire</p>
+    
+
+    @*@if (SessionManager.CurrentUser is not null)
     {
         <p>@SessionManager.CurrentUser.Email</p>
-    }
-</div>
+    }*@
+

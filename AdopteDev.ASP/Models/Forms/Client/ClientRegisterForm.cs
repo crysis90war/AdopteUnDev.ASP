@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace AdopteDev.ASP.Models.Forms
 {
-    public class DevRegisterForm
+    public class ClientRegisterForm
     {
         [Required]
         [DisplayName("Nom :")]
         public string LastName { get; set; }
 
         [Required]
-        [DisplayName("Prenom:")]
+        [DisplayName("Prenom :")]
         public string FirstName { get; set; }
 
         [Required]
-        [DisplayName("Date naissance :")]
-        public DateTime BirthDate { get; set; }
+        [DisplayName("Societer :")]
+        public string Compagny { get; set; }
 
         [Required]
         [DisplayName("telephone :")]
